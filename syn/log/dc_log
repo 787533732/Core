@@ -1,0 +1,1765 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/host/.synopsys_dv_prefs.tcl
+#0 environment config
+#0.1 set search path
+set ADDITIONAL_SEARCH_PATH "../lib"
+../lib
+set_app_var search_path ".  ${ADDITIONAL_SEARCH_PATH}  $search_path"
+.  ../lib  . /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver
+#0.2 read the specified library
+set tar_lib "smic18_ff.db"
+smic18_ff.db
+# "smic18_ff.db"
+read_db $tar_lib
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Loading db file '/home/host/Project/finish/RV32IM/syn/lib/smic18_ff.db'
+Loaded 0 designs.
+#0.3 show loaded lib
+list_libs
+Logical Libraries:
+-------------------------------------------------------------------------
+Library		File			Path
+-------		----			----
+  gtech		gtech.db		/home/synopsys/syn/O-2018.06-SP1/libraries/syn
+  standard.sldb	standard.sldb		/home/synopsys/syn/O-2018.06-SP1/libraries/syn
+  smic18_ff	smic18_ff.db		/home/host/Project/finish/RV32IM/syn/lib
+1
+#0.4 set library
+set_app_var target_library $tar_lib
+smic18_ff.db
+#set_app_var synthetic_library "dw_foundation.sldb";
+set_app_var link_library $tar_lib
+smic18_ff.db
+#set_app_var link_library "* $tar_lib $synthetic_library"
+#0.5 set var for stopping running when an error occurs
+set_app_var sh_script_stop_severity E;
+E
+set_app_var sh_continue_on_error false;
+false
+#1. config before compile
+#1.0 set var name
+set DESIGN_REF_DATA_PATH "../rtl/core";
+../rtl/core
+set DESIGN_NAME "core"
+core
+#1.1 set source file dr
+set RTL_FILE_DIR $DESIGN_REF_DATA_PATH
+../rtl/core
+#1.2 set source file path 
+set RTL_SOURCE_FILES [glob $RTL_FILE_DIR/*.v]
+../rtl/core/alu.v ../rtl/core/bpu.v ../rtl/core/core.v ../rtl/core/csr_regfile.v ../rtl/core/csr.v ../rtl/core/decode.v ../rtl/core/decoder.v ../rtl/core/define.v ../rtl/core/divider.v ../rtl/core/exec.v ../rtl/core/fetch.v ../rtl/core/frontend.v ../rtl/core/issue.v ../rtl/core/lsu.v ../rtl/core/multiplier.v ../rtl/core/pipe_ctrl.v ../rtl/core/regfile.v ../rtl/core/top.v
+#1.3 setup for formality Verification
+set_svf ../result/${DESIGN_NAME}.mapped.svf
+1
+#2 begin to compile
+#2.1 map library to linux path
+define_design_lib work -path ./work;
+1
+#2.2 compile and link
+analyze -format verilog ${RTL_SOURCE_FILES} -lib work
+Running PRESTO HDLC
+Compiling source file ../rtl/core/alu.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/bpu.v
+Warning:  ../rtl/core/bpu.v:36: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../rtl/core/bpu.v:36: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Compiling source file ../rtl/core/core.v
+Compiling source file ../rtl/core/csr_regfile.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/csr.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/decode.v
+Warning:  ../rtl/core/decode.v:58: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../rtl/core/decode.v:58: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Compiling source file ../rtl/core/decoder.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/define.v
+Compiling source file ../rtl/core/divider.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/exec.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/fetch.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/frontend.v
+Warning:  ../rtl/core/fetch.v:52: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../rtl/core/fetch.v:52: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Compiling source file ../rtl/core/issue.v
+Opening include file ../rtl/core/../core/define.v
+Warning:  ../rtl/core/issue.v:376: the undeclared symbol 'pipe0_stall_raw_w' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../rtl/core/issue.v:486: the undeclared symbol 'pipe1_stall_raw_w' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file ../rtl/core/lsu.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/multiplier.v
+Opening include file ../rtl/core/../core/define.v
+Compiling source file ../rtl/core/pipe_ctrl.v
+Opening include file ../rtl/core/../core/define.v
+Warning:  ../rtl/core/multiplier.v:90: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../rtl/core/multiplier.v:79: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Warning:  ../rtl/core/pipe_ctrl.v:285: the undeclared symbol 'squash_e1_e2_w' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file ../rtl/core/regfile.v
+Compiling source file ../rtl/core/top.v
+Presto compilation completed successfully.
+1
+elaborate ${DESIGN_NAME} -update -lib work
+Warning: Detected use of obsolete/unsupported feature.  The following
+	will not be available in a future release of the application:
+	elaborate -update. Use plain elaborate instead (CMD-100)
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'core'.
+Information: Building the design 'frontend' instantiated from design 'core' with
+	the parameters "SUPPORT_BRANCH_PREDICTION=1,GSHARE_ENABLE=1,PHT_ENABLE=1,RAS_ENABLE=1,NUM_PHT_ENTRIES=512,NUM_PHT_ENTRIES_W=9,NUM_RAS_ENTRIES=8,NUM_RAS_ENTRIES_W=3,NUM_BTB_ENTRIES=32,NUM_BTB_ENTRIES_W=5,SUPPORT_MMU=0,SUPPORT_MULDIV=1,EXTRA_DECODE_STAGE=0". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'issue' instantiated from design 'core' with
+	the parameters "SUPPORT_MULDIV=1,SUPPORT_DUAL_ISSUE=1,SUPPORT_LOAD_BYPASS=1,SUPPORT_MUL_BYPASS=1". (HDL-193)
+
+Inferred memory devices in process
+	in routine issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 line 175 in file
+		'../rtl/core/issue.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pc_x_q_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 line 190 in file
+		'../rtl/core/issue.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    priv_x_q_reg     | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 line 537 in file
+		'../rtl/core/issue.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  div_pending_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 line 548 in file
+		'../rtl/core/issue.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  csr_pending_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+============================================================================================================================
+|                                    block name/line                                     | Inputs | Outputs | # sel inputs |
+============================================================================================================================
+| issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1/601 |   32   |    1    |      5       |
+| issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1/601 |   32   |    1    |      5       |
+| issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1/601 |   32   |    1    |      5       |
+| issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1/612 |   32   |    1    |      5       |
+| issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1/612 |   32   |    1    |      5       |
+| issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1/612 |   32   |    1    |      5       |
+============================================================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'exec'. (HDL-193)
+
+Inferred memory devices in process
+	in routine exec line 173 in file
+		'../rtl/core/exec.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    result_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine exec line 278 in file
+		'../rtl/core/exec.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| branch_ntaken_q_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    next_pc_q_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  current_pc_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  branch_ret_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  branch_call_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  branch_jmp_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| branch_taken_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'multiplier' instantiated from design 'core' with
+	the parameters "MULT_STAGES=2". (HDL-193)
+
+Inferred memory devices in process
+	in routine multiplier_MULT_STAGES2 line 50 in file
+		'../rtl/core/multiplier.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| operand_b_e1_q_reg  | Flip-flop |  33   |  Y  | N  | Y  | N  | N  | N  | N  |
+| mulhi_sel_e1_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| operand_a_e1_q_reg  | Flip-flop |  33   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine multiplier_MULT_STAGES2 line 81 in file
+		'../rtl/core/multiplier.v'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+| genblk1.result_e2_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'divider'. (HDL-193)
+
+Inferred memory devices in process
+	in routine divider line 45 in file
+		'../rtl/core/divider.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   div_inst_q_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    last_b_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    divisor_q_reg    | Flip-flop |  63   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   last_remu_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   last_rem_q_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   last_divu_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   last_div_q_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    last_a_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  invert_res_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   quotient_q_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    q_mask_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   dividend_q_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   div_busy_q_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine divider line 116 in file
+		'../rtl/core/divider.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     valid_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine divider line 124 in file
+		'../rtl/core/divider.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   wb_result_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'lsu' instantiated from design 'core' with
+	the parameters "MEM_CACHE_ADDR_MIN=32'h80000000,MEM_CACHE_ADDR_MAX=32'h8fffffff". (HDL-193)
+Warning:  ../rtl/core/lsu.v:151: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 109 in file
+	'../rtl/core/lsu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           135            |    auto/auto     |
+|           151            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 306 in file
+	'../rtl/core/lsu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           317            |    auto/auto     |
+===============================================
+Warning:  ../rtl/core/lsu.v:287: Net addr_lsb_r connected to instance u1_fifo is declared as reg data type but is not driven by an always block. (VER-1004)
+Warning:  ../rtl/core/lsu.v:287: Net load_signed_r connected to instance u1_fifo is declared as reg data type but is not driven by an always block. (VER-1004)
+Warning:  ../rtl/core/lsu.v:287: Net load_half_r connected to instance u1_fifo is declared as reg data type but is not driven by an always block. (VER-1004)
+Warning:  ../rtl/core/lsu.v:287: Net load_byte_r connected to instance u1_fifo is declared as reg data type but is not driven by an always block. (VER-1004)
+
+Inferred memory devices in process
+	in routine lsu_80000000_8fffffff line 86 in file
+		'../rtl/core/lsu.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| pending_lsu_e2_q_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine lsu_80000000_8fffffff line 97 in file
+		'../rtl/core/lsu.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| mem_unaligned_e2_q_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine lsu_80000000_8fffffff line 185 in file
+		'../rtl/core/lsu.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+|      mem_rd_q_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      mem_xh_q_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      mem_xb_q_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     mem_load_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  mem_cacheable_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      mem_wr_q_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    mem_flush_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  mem_writeback_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  mem_invalidate_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      mem_ls_q_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     mem_addr_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| mem_unaligned_e1_q_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   mem_data_wr_q_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+==================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'csr' instantiated from design 'core' with
+	the parameters "SUPPORT_MULDIV=1,SUPPORT_SUPER=0". (HDL-193)
+
+Inferred memory devices in process
+	in routine csr_SUPPORT_MULDIV1_SUPPORT_SUPER0 line 157 in file
+		'../rtl/core/csr.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| exception_e1_q_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  rd_valid_e1_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| rd_result_e1_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| csr_wdata_e1_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine csr_SUPPORT_MULDIV1_SUPPORT_SUPER0 line 214 in file
+		'../rtl/core/csr.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| take_interrupt_q_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine csr_SUPPORT_MULDIV1_SUPPORT_SUPER0 line 227 in file
+		'../rtl/core/csr.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   tlb_flush_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine csr_SUPPORT_MULDIV1_SUPPORT_SUPER0 line 238 in file
+		'../rtl/core/csr.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ifence_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine csr_SUPPORT_MULDIV1_SUPPORT_SUPER0 line 253 in file
+		'../rtl/core/csr.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| branch_target_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    branch_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     reset_q_reg     | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'bpu' instantiated from design 'frontend_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_SUPPORT_MMU0_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0' with
+	the parameters "SUPPORT_BRANCH_PREDICTION=1,GSHARE_ENABLE=1,PHT_ENABLE=1,RAS_ENABLE=1,NUM_PHT_ENTRIES=512,NUM_PHT_ENTRIES_W=9,NUM_RAS_ENTRIES=8,NUM_RAS_ENTRIES_W=3,NUM_BTB_ENTRIES=32,NUM_BTB_ENTRIES_W=5". (HDL-193)
+Warning:  ../rtl/core/bpu.v:233: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5 line 61 in file
+		'../rtl/core/bpu.v'.
+========================================================================================
+|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+========================================================================================
+| genblk1.ras_index_real_q_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+========================================================================================
+
+Inferred memory devices in process
+	in routine bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5 line 94 in file
+		'../rtl/core/bpu.v'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+| genblk1.ras_index_q_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| genblk1.ras_stack_q_reg | Flip-flop |  248  |  Y  | N  | Y  | N  | N  | N  | N  |
+| genblk1.ras_stack_q_reg | Flip-flop |   8   |  Y  | N  | N  | Y  | N  | N  | N  |
+===================================================================================
+
+Inferred memory devices in process
+	in routine bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5 line 125 in file
+		'../rtl/core/bpu.v'.
+=============================================================================================
+|           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=============================================================================================
+| genblk1.global_history_real_q_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+=============================================================================================
+
+Inferred memory devices in process
+	in routine bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5 line 135 in file
+		'../rtl/core/bpu.v'.
+========================================================================================
+|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+========================================================================================
+| genblk1.global_history_q_reg | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+========================================================================================
+
+Inferred memory devices in process
+	in routine bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5 line 157 in file
+		'../rtl/core/bpu.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| genblk1.pht_sat_q_reg | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5 line 241 in file
+		'../rtl/core/bpu.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| genblk1.btb_target_q_reg  | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
+| genblk1.btb_is_ret_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| genblk1.btb_is_jmp_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   genblk1.btb_pc_q_reg    | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
+| genblk1.btb_is_call_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+Statistics for MUX_OPs
+==============================================================================================================================================================================================================================
+|                                                                                     block name/line                                                                                      | Inputs | Outputs | # sel inputs |
+==============================================================================================================================================================================================================================
+| bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5/114 |   8    |   32    |      3       |
+| bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5/162 |  512   |    2    |      9       |
+| bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5/168 |  512   |    1    |      9       |
+==============================================================================================================================================================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'decode' instantiated from design 'frontend_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_SUPPORT_MMU0_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0' with
+	the parameters "SUPPORT_MULDIV=1,EXTRA_DECODE_STAGE=0". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'fetch' instantiated from design 'frontend_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_SUPPORT_MMU0_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0' with
+	the parameters "SUPPORT_MMU=0". (HDL-193)
+Warning:  ../rtl/core/fetch.v:83: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Inferred memory devices in process
+	in routine fetch_SUPPORT_MMU0 line 58 in file
+		'../rtl/core/fetch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   branch_pc_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    branch_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_SUPPORT_MMU0 line 79 in file
+		'../rtl/core/fetch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    active_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_SUPPORT_MMU0 line 93 in file
+		'../rtl/core/fetch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     stall_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_SUPPORT_MMU0 line 104 in file
+		'../rtl/core/fetch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| icache_fetch_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_SUPPORT_MMU0 line 116 in file
+		'../rtl/core/fetch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pc_f_q_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_SUPPORT_MMU0 line 135 in file
+		'../rtl/core/fetch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pc_d_q_reg      | Flip-flop |  29   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_SUPPORT_MMU0 line 141 in file
+		'../rtl/core/fetch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pred_d_q_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_SUPPORT_MMU0 line 161 in file
+		'../rtl/core/fetch.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  skid_buffer_q_reg  | Flip-flop |  100  |  Y  | N  | Y  | N  | N  | N  | N  |
+|  skid_valid_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'pipe_ctrl' instantiated from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1' with
+	the parameters "SUPPORT_LOAD_BYPASS=1,SUPPORT_MUL_BYPASS=1". (HDL-193)
+Warning:  ../rtl/core/pipe_ctrl.v:365: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 309 in file
+	'../rtl/core/pipe_ctrl.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           350            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 line 106 in file
+		'../rtl/core/pipe_ctrl.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| exception_e1_q_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+| operand_rb_e1_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| operand_ra_e1_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   opcode_e1_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    ctrl_e1_q_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   valid_e1_q_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     pc_e1_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 line 188 in file
+		'../rtl/core/pipe_ctrl.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| operand_ra_e2_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| operand_rb_e2_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   result_e2_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| exception_e2_q_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   valid_e2_q_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    ctrl_e2_q_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   csr_wr_e2_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| csr_wdata_e2_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pc_e2_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   opcode_e2_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 line 288 in file
+		'../rtl/core/pipe_ctrl.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| squash_e1_e2_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 line 309 in file
+		'../rtl/core/pipe_ctrl.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pc_wb_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| operand_ra_wb_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   result_wb_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| operand_rb_wb_q_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   opcode_wb_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| exception_wb_q_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   valid_wb_q_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    ctrl_wb_q_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   csr_wr_wb_q_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| csr_wdata_wb_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'regfile'. (HDL-193)
+
+Statistics for case statements in always block at line 220 in file
+	'../rtl/core/regfile.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           221            |    auto/auto     |
+|           256            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 297 in file
+	'../rtl/core/regfile.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           298            |    auto/auto     |
+|           333            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine regfile line 86 in file
+		'../rtl/core/regfile.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    reg_r26_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r30_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r27_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r29_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r28_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r31_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r1_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r2_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r3_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r4_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r5_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r6_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r7_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r8_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r9_q_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r10_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r11_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r12_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r13_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r14_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r15_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r16_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r17_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r18_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r19_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r20_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r21_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r22_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r23_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r24_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    reg_r25_q_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'alu'. (HDL-193)
+
+Statistics for case statements in always block at line 26 in file
+	'../rtl/core/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            35            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'lsu_fifo' instantiated from design 'lsu_80000000_8fffffff' with
+	the parameters "WIDTH=36,DEPTH=2,ADDR_W=1". (HDL-193)
+
+Inferred memory devices in process
+	in routine lsu_fifo_WIDTH36_DEPTH2_ADDR_W1 line 388 in file
+		'../rtl/core/lsu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      ram_q_reg      | Flip-flop |  72   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    rd_ptr_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    wr_ptr_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     count_q_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'csr_regfile' instantiated from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0' with
+	the parameters "SUPPORT_MTIMECMP=1,SUPPORT_SUPER=0". (HDL-193)
+Warning:  ../rtl/core/csr_regfile.v:106: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/core/csr_regfile.v:107: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/core/csr_regfile.v:182: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/core/csr_regfile.v:238: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../rtl/core/csr_regfile.v:239: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 96 in file
+	'../rtl/core/csr_regfile.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            98            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 148 in file
+	'../rtl/core/csr_regfile.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           213            |    auto/auto     |
+|           230            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine csr_regfile_SUPPORT_SUPER0_SUPPORT_MTIMECMP1 line 72 in file
+		'../rtl/core/csr_regfile.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   irq_priv_q_reg    | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine csr_regfile_SUPPORT_SUPER0_SUPPORT_MTIMECMP1 line 82 in file
+		'../rtl/core/csr_regfile.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  csr_mip_upd_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine csr_regfile_SUPPORT_SUPER0_SUPPORT_MTIMECMP1 line 271 in file
+		'../rtl/core/csr_regfile.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  csr_mideleg_q_reg  | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+| csr_mip_next_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  csr_mcycle_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   csr_mepc_q_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    csr_sr_q_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  csr_mcause_q_reg   | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   csr_mtval_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   csr_mtvec_q_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    csr_mip_q_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    csr_mie_q_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   csr_mpriv_q_reg   | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+| csr_mcycle_h_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| csr_mscratch_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| csr_mtimecmp_q_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| csr_mtime_ie_q_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'bpu_lfsr' instantiated from design 'bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5' with
+	the parameters "DEPTH=32,ADDR_W=5". (HDL-193)
+
+Inferred memory devices in process
+	in routine bpu_lfsr_DEPTH32_ADDR_W5 line 329 in file
+		'../rtl/core/bpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     lfsr_q_reg      | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     lfsr_q_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'fetch_fifo' instantiated from design 'decode_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0' with
+	the parameters "OPC_INFO_W=2". (HDL-193)
+
+Inferred memory devices in process
+	in routine fetch_fifo_OPC_INFO_W2 line 199 in file
+		'../rtl/core/decode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     info0_q_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      pc_q_reg       | Flip-flop |  58   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     info1_q_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      ram_q_reg      | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_fifo_OPC_INFO_W2 line 224 in file
+		'../rtl/core/decode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    valid1_q_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    valid0_q_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_fifo_OPC_INFO_W2 line 240 in file
+		'../rtl/core/decode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     count_q_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fetch_fifo_OPC_INFO_W2 line 255 in file
+		'../rtl/core/decode.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    rd_ptr_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    wr_ptr_q_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'decoder'. (HDL-193)
+Presto compilation completed successfully.
+1
+current_design $DESIGN_NAME
+Current design is 'core'.
+{core}
+uniquify
+Information: Uniquified 2 instances of design 'exec'. (OPT-1056)
+Information: Uniquified 2 instances of design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'. (OPT-1056)
+Information: Uniquified 2 instances of design 'alu'. (OPT-1056)
+Information: Uniquified 2 instances of design 'decoder'. (OPT-1056)
+1
+link
+
+  Linking design 'core'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  smic18_ff (library)         /home/host/Project/finish/RV32IM/syn/lib/smic18_ff.db
+
+Warning: Unable to resolve reference 'exec_1' in 'core'. (LINK-5)
+Warning: Unable to resolve reference 'exec_0' in 'core'. (LINK-5)
+Warning: Unable to resolve reference 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_1' in 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'. (LINK-5)
+Warning: Unable to resolve reference 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_0' in 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'. (LINK-5)
+Warning: Unable to resolve reference 'decoder_1' in 'decode_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0'. (LINK-5)
+Warning: Unable to resolve reference 'decoder_0' in 'decode_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0'. (LINK-5)
+0
+#3 apply logical design constraints
+source -echo -verbose ../script/dc_constraints.tcl
+#1. define var
+#1.1 clock and reset
+set CLK [get_ports clk_i]
+{clk_i}
+set RST [get_ports rstn_i]
+{rstn_i}
+set clkPeriod_ns 4
+4
+set inDelay_ns   0
+0
+set outDelay_ns  0
+0
+#1.2 time analysis
+set clkLatency_ns [expr $clkPeriod_ns*.02];
+0.08
+set clkSetup_ns   [expr $clkPeriod_ns*.1];
+0.4
+set clkHold_ns    [expr $clkPeriod_ns*.05];
+0.2
+#2. create and set clock
+#2.1 createclock
+create_clock -period $clkPeriod_ns $CLK;
+1
+#2.2 high fanout signal setting
+set_dont_touch_network [list $CLK $RST];
+1
+set_ideal_network      [list $CLK $RST];
+1
+#2.3 clock skew
+set_clock_uncertainty $clkSetup_ns -setup [get_clocks $CLK]
+1
+set_clock_uncertainty $clkHold_ns  -hold  [get_clocks $CLK]
+1
+#3. set wire load
+#3.1 set the transition time of the drive port
+set_input_transition [expr $clkPeriod_ns*.1] [all_inputs];
+1
+#3.2 set_wire_load_mode
+set_wire_load_mode segmented;
+1
+set_app_var auto_wire_load_selection true;
+true
+#3.3 set output load
+#set_load 0.1 [all_outputs]
+#3.4 sets a derating factor on the current design
+set_timing_derate -early 0.90
+1
+set_timing_derate -late  1.10
+1
+#3.5 set max transition and fanout
+set_max_transition [expr $clkPeriod_ns*.1] $DESIGN_NAME;
+1
+set_max_fanout 16 $DESIGN_NAME;
+1
+#4 set min and max delay of input and output
+#4.1 set min delay
+set_input_delay -min 0 -clock $CLK [get_ports intr_i        ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports reset_vector_i];
+1
+set_input_delay -min 0 -clock $CLK [get_ports cpu_id_i      ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_i_accept_i];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_i_inst_i  ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_i_valid_i ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_i_error_i ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_d_data_rd_i ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_d_accept_i  ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_d_ack_i     ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_d_error_i   ];
+1
+set_input_delay -min 0 -clock $CLK [get_ports mem_d_resp_tag_i];
+1
+#
+set_output_delay  -min 0 -clock $CLK [get_ports mem_i_rd_o         ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_i_pc_o         ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_i_flush_o      ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_i_invalidate_o ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_addr_o      ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_data_wr_o   ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_rd_o        ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_wr_o        ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_cacheable_o ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_req_tag_o   ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_invalidate_o];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_writeback_o ];
+1
+set_output_delay  -min 0 -clock $CLK [get_ports mem_d_flush_o];
+1
+#4.2 set max delay
+set MAX_OUT_BUDGET [expr {0.5 * $clkPeriod_ns}];
+2.0
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports intr_i        ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports reset_vector_i];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports cpu_id_i      ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_i_accept_i];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_i_inst_i  ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_i_valid_i ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_i_error_i ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_data_rd_i ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_accept_i  ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_ack_i     ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_error_i   ];
+1
+set_input_delay -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_resp_tag_i];#
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_i_rd_o         ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_i_pc_o         ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_i_flush_o      ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_i_invalidate_o ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_addr_o      ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_data_wr_o   ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_rd_o        ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_wr_o        ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_cacheable_o ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_req_tag_o   ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_invalidate_o];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_writeback_o ];
+1
+set_output_delay  -max $MAX_OUT_BUDGET -clock $CLK [get_ports mem_d_flush_o];
+1
+#5. other settings
+set_app_var hdlin_check_no_latch true;
+true
+set_max_area 0;1
+1
+#4 create default path groups
+#4.1 get root clock port
+set ports_clock_root [filter_collection [get_attribute [get_clocks] sources] object_class==port]
+{clk_i}
+#4.2 define different path
+group_path -name REGOUT -to [all_outputs];
+1
+group_path -name REGIN -from [remove_from_collection [all_inputs] $ports_clock_root];
+1
+group_path -name FEEDTHROUGH -from [remove_from_collection [all_inputs] $ports_clock_root] -to [all_outputs];
+1
+#5 compile
+#5.1 set buffer driver for each poet
+set_fix_multiple_port_nets -all -buffer_constants
+1
+#5.2 check design and save log
+check_design > ../log/check_design.log
+#5.3 
+remove_unconnected_ports [get_cells -hier {*}]
+Removing port 'issue_rd_i[4]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_1'
+Removing port 'issue_rd_i[3]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_1'
+Removing port 'issue_rd_i[2]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_1'
+Removing port 'issue_rd_i[1]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_1'
+Removing port 'issue_rd_i[0]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_1'
+Removing port 'issue_rd_i[4]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_0'
+Removing port 'issue_rd_i[3]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_0'
+Removing port 'issue_rd_i[2]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_0'
+Removing port 'issue_rd_i[1]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_0'
+Removing port 'issue_rd_i[0]' from design 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_0'
+Removing port 'branch_priv_i[1]' from design 'fetch_SUPPORT_MMU0'
+Removing port 'branch_priv_i[0]' from design 'fetch_SUPPORT_MMU0'
+Removing port 'branch_priv_i[1]' from design 'frontend_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_SUPPORT_MMU0_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0'
+Removing port 'branch_priv_i[0]' from design 'frontend_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_SUPPORT_MMU0_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0'
+Removing port 'branch_exec0_request_i' from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Removing port 'branch_exec0_is_call_i' from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Removing port 'branch_exec0_is_ret_i' from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Removing port 'branch_exec0_is_jmp_i' from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Removing port 'branch_d_exec0_priv_i[1]' from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Removing port 'branch_d_exec0_priv_i[0]' from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Removing port 'branch_d_exec1_priv_i[1]' from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Removing port 'branch_d_exec1_priv_i[0]' from design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Removing port 'opcode_invalid_i' from design 'exec_1'
+Removing port 'opcode_rb_idx_i[4]' from design 'exec_1'
+Removing port 'opcode_rb_idx_i[3]' from design 'exec_1'
+Removing port 'opcode_rb_idx_i[2]' from design 'exec_1'
+Removing port 'opcode_rb_idx_i[1]' from design 'exec_1'
+Removing port 'opcode_rb_idx_i[0]' from design 'exec_1'
+Removing port 'opcode_invalid_i' from design 'exec_0'
+Removing port 'opcode_rb_idx_i[4]' from design 'exec_0'
+Removing port 'opcode_rb_idx_i[3]' from design 'exec_0'
+Removing port 'opcode_rb_idx_i[2]' from design 'exec_0'
+Removing port 'opcode_rb_idx_i[1]' from design 'exec_0'
+Removing port 'opcode_rb_idx_i[0]' from design 'exec_0'
+Removing port 'mem_resp_tag_i[10]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[9]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[8]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[7]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[6]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[5]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[4]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[3]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[2]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[1]' from design 'lsu_80000000_8fffffff'
+Removing port 'mem_resp_tag_i[0]' from design 'lsu_80000000_8fffffff'
+Removing port 'opcode_pc_i[31]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[30]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[29]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[28]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[27]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[26]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[25]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[24]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[23]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[22]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[21]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[20]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[19]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[18]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[17]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[16]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[15]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[14]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[13]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[12]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[11]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[10]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[9]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[8]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[7]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[6]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[5]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[4]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[3]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[2]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[1]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_pc_i[0]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rd_idx_i[4]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rd_idx_i[3]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rd_idx_i[2]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rd_idx_i[1]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rd_idx_i[0]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_idx_i[4]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_idx_i[3]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_idx_i[2]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_idx_i[1]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_idx_i[0]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[31]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[30]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[29]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[28]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[27]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[26]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[25]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[24]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[23]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[22]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[21]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[20]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[19]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[18]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[17]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[16]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[15]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[14]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[13]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[12]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[11]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[10]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[9]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[8]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[7]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[6]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[5]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[4]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[3]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[2]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[1]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Removing port 'opcode_rb_operand_i[0]' from design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+1
+#
+set_host_options -max_cores 1
+1
+#
+compile_ultra -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/dw_foundation.sldb'
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.1 |     *     |
+============================================================================
+
+
+Information: There are 1153 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'core'
+
+Loaded alib file './alib-52/smic18_ff.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5'
+Information: Added key list 'DesignWare' to design 'bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5'. (DDB-72)
+ Implement Synthetic for 'bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5'.
+  Processing 'regfile'
+  Processing 'csr_regfile_SUPPORT_SUPER0_SUPPORT_MTIMECMP1'
+Information: Added key list 'DesignWare' to design 'csr_regfile_SUPPORT_SUPER0_SUPPORT_MTIMECMP1'. (DDB-72)
+Information: The register 'csr_mpriv_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mpriv_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mie_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mideleg_q_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mideleg_q_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'csr_mip_next_q_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'irq_priv_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'irq_priv_q_reg[0]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'csr_regfile_SUPPORT_SUPER0_SUPPORT_MTIMECMP1'.
+  Processing 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'
+Information: Added key list 'DesignWare' to design 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'. (DDB-72)
+ Implement Synthetic for 'issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1'.
+  Processing 'pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_0'
+  Processing 'lsu_80000000_8fffffff'
+ Implement Synthetic for 'lsu_80000000_8fffffff'.
+Information: Added key list 'DesignWare' to design 'lsu_80000000_8fffffff'. (DDB-72)
+  Processing 'fetch_fifo_OPC_INFO_W2'
+Information: Added key list 'DesignWare' to design 'fetch_fifo_OPC_INFO_W2'. (DDB-72)
+  Processing 'fetch_SUPPORT_MMU0'
+  Processing 'alu_0'
+ Implement Synthetic for 'alu_0'.
+  Processing 'decoder_0'
+  Processing 'lsu_fifo_WIDTH36_DEPTH2_ADDR_W1'
+Information: Added key list 'DesignWare' to design 'lsu_fifo_WIDTH36_DEPTH2_ADDR_W1'. (DDB-72)
+  Processing 'decode_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0'
+  Processing 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'
+Information: Added key list 'DesignWare' to design 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'. (DDB-72)
+ Implement Synthetic for 'csr_SUPPORT_MULDIV1_SUPPORT_SUPER0'.
+  Processing 'multiplier_MULT_STAGES2'
+ Implement Synthetic for 'multiplier_MULT_STAGES2'.
+  Processing 'exec_0'
+Information: Added key list 'DesignWare' to design 'exec_0'. (DDB-72)
+ Implement Synthetic for 'exec_0'.
+  Processing 'exec_1'
+Information: Added key list 'DesignWare' to design 'exec_1'. (DDB-72)
+ Implement Synthetic for 'exec_1'.
+  Processing 'core'
+  Processing 'frontend_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_SUPPORT_MMU0_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0'
+  Processing 'bpu_lfsr_DEPTH32_ADDR_W5'
+  Processing 'divider'
+Information: Added key list 'DesignWare' to design 'divider'. (DDB-72)
+ Implement Synthetic for 'divider'.
+Memory usage for J1 task 356 Mbytes -- main task 267 Mbytes.
+Memory usage for J2 task 311 Mbytes -- main task 267 Mbytes.
+Memory usage for J3 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J4 task 273 Mbytes -- main task 267 Mbytes.
+Memory usage for J5 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J6 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J7 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J8 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J9 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J10 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J11 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J12 task 267 Mbytes -- main task 267 Mbytes.
+Memory usage for J13 task 267 Mbytes -- main task 267 Mbytes.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The register 'u1_exec/current_pc_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u1_exec/current_pc_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_fetch/skid_buffer_q_reg[98]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_fetch/skid_buffer_q_reg[66]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_fetch/skid_buffer_q_reg[65]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_fetch/skid_buffer_q_reg[64]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u0_exec/current_pc_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u0_exec/current_pc_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/pc_e1_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/pc_e1_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/exception_e1_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/exception_e1_q_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/ctrl_e1_q_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/ctrl_e1_q_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u0_pipe_ctrl/pc_e1_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u0_pipe_ctrl/pc_e1_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u0_pipe_ctrl/exception_e1_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u0_pipe_ctrl/exception_e1_q_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/ctrl_e2_q_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/ctrl_wb_q_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/pc_e2_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/pc_wb_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/pc_e2_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/pc_wb_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u0_pipe_ctrl/pc_e2_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u0_pipe_ctrl/pc_e2_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u0_pipe_ctrl/pc_wb_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u0_pipe_ctrl/pc_wb_q_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/priv_x_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/priv_x_q_reg[1]' is a constant and will be removed. (OPT-1206)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Updating design information... (UID-85)
+Information: compile falsified 58 infeasible paths. (OPT-1720)
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+  Mapping Optimization (Phase 6)
+  Mapping Optimization (Phase 7)
+  Mapping Optimization (Phase 8)
+  Mapping Optimization (Phase 9)
+  Mapping Optimization (Phase 10)
+  Mapping Optimization (Phase 11)
+  Mapping Optimization (Phase 12)
+  Mapping Optimization (Phase 13)
+  Mapping Optimization (Phase 14)
+  Mapping Optimization (Phase 15)
+  Mapping Optimization (Phase 16)
+  Mapping Optimization (Phase 17)
+  Mapping Optimization (Phase 18)
+  Mapping Optimization (Phase 19)
+  Mapping Optimization (Phase 20)
+  Mapping Optimization (Phase 21)
+  Mapping Optimization (Phase 22)
+  Mapping Optimization (Phase 23)
+  Mapping Optimization (Phase 24)
+  Mapping Optimization (Phase 25)
+  Mapping Optimization (Phase 26)
+  Mapping Optimization (Phase 27)
+  Mapping Optimization (Phase 28)
+  Mapping Optimization (Phase 29)
+  Mapping Optimization (Phase 30)
+  Mapping Optimization (Phase 31)
+  Mapping Optimization (Phase 32)
+  Mapping Optimization (Phase 33)
+  Mapping Optimization (Phase 34)
+Information: Added key list 'DesignWare' to design 'alu_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'alu_0'. (DDB-72)
+Information: The register 'u_frontend/u_decode/genblk1.u_fifo/info1_q_reg[0][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_decode/genblk1.u_fifo/info0_q_reg[0][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_decode/genblk1.u_fifo/info1_q_reg[1][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_decode/genblk1.u_fifo/info0_q_reg[1][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[15][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[15][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[0][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[0][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[19][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[19][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[22][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[22][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[11][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[11][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[25][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[25][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[28][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[28][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[29][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[29][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[24][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[24][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[26][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[26][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[27][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[27][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[30][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[30][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[31][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[31][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[13][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[13][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[12][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[12][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[14][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[14][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[8][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[8][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[9][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[9][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[10][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[10][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[5][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[5][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[4][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[4][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[7][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[7][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[6][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[6][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[3][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[3][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[2][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[2][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[1][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[1][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[16][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[16][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[17][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[17][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[23][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[23][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[21][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[21][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[20][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[20][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[18][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_pc_q_reg[18][1]' is a constant and will be removed. (OPT-1206)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+Information: The register 'u_issue/u0_pipe_ctrl/exception_e1_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_issue/u1_pipe_ctrl/exception_e1_q_reg[0]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:12:59 2788406.2      3.08   12995.1     450.7                           35462.6914
+    0:12:59 2788406.2      3.08   12995.1     450.7                           35462.6914
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Mapping 'exec_1_DW01_sub_7'
+  Mapping 'lsu_80000000_8fffffff_DP_OP_68_155_7779_3'
+Information: Added key list 'DesignWare' to design 'multiplier_MULT_STAGES2'. (DDB-72)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:13:48 1229843.2      3.61   12133.4     755.7                           10217.2227
+    0:14:49 1244702.2      2.28    7410.6     975.5                           10433.6221
+    0:14:49 1244702.2      2.28    7410.6     975.5                           10433.6221
+    0:14:57 1241488.8      2.28    7388.2    1023.1                           10379.6895
+Information: The register 'u0_exec/next_pc_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u1_exec/next_pc_q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.ras_stack_q_reg[3][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.ras_stack_q_reg[7][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.ras_stack_q_reg[2][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.ras_stack_q_reg[6][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.ras_stack_q_reg[5][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.ras_stack_q_reg[1][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.ras_stack_q_reg[0][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.ras_stack_q_reg[4][1]' is a constant and will be removed. (OPT-1206)
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[23][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[13][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[7][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[28][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[31][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[29][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[30][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[26][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[24][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[18][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[20][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[22][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[16][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[15][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[5][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[21][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[17][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[25][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[19][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[12][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[2][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[6][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[4][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[14][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[10][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[0][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[8][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[27][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[3][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[11][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[9][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'u_frontend/u_bpu/genblk1.btb_target_q_reg[1][0]' is a constant and will be removed. (OPT-1206)
+    0:15:30 1224540.8      2.55    7388.4     919.0                           10219.3818
+    0:15:35 1220000.2      2.54    7418.6     912.6                           10142.3945
+    0:15:38 1215995.2      2.47    7455.8     900.2                           10086.8506
+    0:15:43 1214039.2      2.34    7289.4     899.5                           10060.3359
+    0:15:50 1213453.8      2.34    7189.1     896.6                           10045.9385
+    0:15:55 1213949.4      2.34    7024.0     891.9                           10054.7100
+    0:16:01 1203301.6      2.34    7000.7     843.2                           9761.4961
+    0:16:01 1203301.6      2.34    7000.7     843.2                           9761.4961
+    0:17:02 1208677.0      2.25    7097.5     850.7                           9831.6514
+    0:17:02 1208677.0      2.25    7097.5     850.7                           9831.6514
+    0:17:15 1210340.2      2.23    6992.4     851.6                           9854.3896
+    0:17:15 1210340.2      2.23    6992.4     851.6                           9854.3896
+    0:17:45 1214225.4      2.20    6979.5     852.4                           9899.8936
+    0:17:45 1214225.4      2.20    6979.5     852.4                           9899.8936
+    0:19:12 1229137.7      2.05    6424.4     913.8                           10123.5166
+    0:19:12 1229137.7      2.05    6424.4     913.8                           10123.5166
+    0:19:30 1229500.3      2.05    6376.6     905.6                           10129.2236
+    0:19:30 1229500.3      2.05    6376.6     905.6                           10129.2236
+    0:20:07 1232866.6      2.01    6318.4     920.8                           10180.3535
+    0:20:07 1232866.6      2.01    6318.4     920.8                           10180.3535
+    0:20:21 1232823.4      2.00    6318.4     920.8                           10179.9893
+    0:20:21 1232823.4      2.00    6318.4     920.8                           10179.9893
+    0:20:45 1233488.7      2.00    6312.5     921.2                           10188.9902
+    0:20:45 1233488.7      2.00    6312.5     921.2                           10188.9902
+    0:20:54 1233485.3      2.00    6312.5     921.3                           10188.1416
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:20:54 1233485.3      2.00    6312.5     921.3                           10188.1416
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:21:02 1264743.5      2.13    6176.7     601.0 u_frontend/u_bpu/net316211 10697.0400
+    0:21:04 1268721.9      2.13    6176.3     560.7 u_multiplier/net308492    10765.5439
+    0:21:06 1273285.8      2.13    6169.3     544.8 u_frontend/u_bpu/net252088 10826.3662
+    0:21:09 1281452.1      2.13    6164.3     537.6 u_frontend/u_bpu/net319606 10952.4453
+    0:21:10 1283797.2      2.10    6185.4     279.1 u_frontend/u_bpu/net320013 10993.9551
+    0:21:13 1285324.0      2.10    6144.4     207.1 u_frontend/u_bpu/net313217 11015.7041
+    0:21:19 1286095.8      1.97    6252.3     207.0 u1_exec/result_q_reg[26]/D 11028.0947
+    0:21:23 1287482.9      1.97    6255.3     196.0 u_issue/pc_x_q_reg[17]/D  11048.8428
+    0:21:25 1288271.2      1.96    6329.8     194.0 u_frontend/u_fetch/pc_f_q_reg[26]/D 11060.0703
+    0:21:29 1288257.9      1.95    6322.0     194.0 u_frontend/u_fetch/pc_f_q_reg[12]/D 11060.2031
+    0:21:31 1288514.1      1.94    6293.0     191.0 u_frontend/u_fetch/pc_f_q_reg[12]/D 11062.9512
+    0:21:33 1289182.7      1.94    6220.1     191.0 u_frontend/u_fetch/pc_f_q_reg[19]/D 11073.8818
+    0:21:37 1289744.8      1.93    6198.3     191.0 u_frontend/u_fetch/pc_f_q_reg[8]/D 11083.9971
+    0:21:40 1289894.5      1.92    6070.3     191.0 u_frontend/u_fetch/pc_f_q_reg[19]/D 11084.9961
+    0:21:44 1290167.3      1.90    6001.5     191.0 u_frontend/u_fetch/pc_f_q_reg[8]/D 11088.1201
+    0:21:45 1290396.8      1.89    5996.4     191.0 u_frontend/u_fetch/pc_f_q_reg[4]/D 11090.0400
+    0:21:47 1290330.3      1.89    5982.4     191.0 u_frontend/u_fetch/pc_f_q_reg[31]/D 11088.1709
+    0:21:50 1290722.8      1.89    5973.9     191.0 u_frontend/u_bpu/genblk1.pht_sat_q_reg[273][1]/D 11094.9844
+    0:21:53 1291105.3      1.89    5965.8     191.0 u_frontend/u_fetch/pc_f_q_reg[19]/D 11100.7246
+    0:21:54 1291554.4      1.89    5964.3     191.0 u_frontend/u_fetch/pc_f_q_reg[3]/D 11108.1211
+    0:21:57 1291850.4      1.89    5943.7     190.0 u_frontend/u_fetch/pc_f_q_reg[3]/D 11112.0322
+    0:21:58 1292066.7      1.88    5943.6     190.0 u_frontend/u_fetch/pc_f_q_reg[3]/D 11115.2832
+    0:22:00 1292206.4      1.88    5932.9     190.0 u_frontend/u_fetch/pc_f_q_reg[21]/D 11117.0361
+    0:22:02 1292435.9      1.88    5930.1     190.0 u_frontend/u_fetch/pc_f_q_reg[21]/D 11121.8848
+    0:22:04 1292529.0      1.88    5922.5     187.0 u_frontend/u_fetch/pc_f_q_reg[21]/D 11123.4082
+    0:22:07 1293028.0      1.87    5911.1     187.0 mem_i_pc_o[4]             11132.0049
+    0:22:09 1294145.7      1.87    5905.0     187.0 u_frontend/u_bpu/genblk1.ras_stack_q_reg[6][30]/D 11150.7383
+    0:22:10 1294631.3      1.87    5900.1     187.0 u_frontend/u_fetch/pc_f_q_reg[4]/D 11157.8477
+    0:22:13 1294674.6      1.87    5896.7     187.0 u_lsu/mem_cacheable_q_reg/D 11157.9863
+    0:22:16 1294651.3      1.87    5896.7     123.0 u_csr/u_csrfile/net328758 11157.8271
+    0:22:18 1297052.9      1.89    5917.9       0.0 mem_i_pc_o[4]             11199.3965
+    0:22:21 1297522.0      1.88    5911.3       0.0 u_frontend/u_fetch/pc_f_q_reg[12]/D 11204.4912
+    0:22:23 1298160.6      1.87    5906.4       0.0 u_frontend/u_fetch/pc_f_q_reg[12]/D 11214.4424
+    0:22:25 1298393.5      1.87    5909.9       0.0 u_frontend/u_fetch/pc_f_q_reg[12]/D 11218.4932
+    0:22:27 1298995.6      1.86    5903.9       0.0 u_frontend/u_bpu/genblk1.ras_stack_q_reg[2][29]/D 11226.8818
+    0:22:29 1299115.3      1.86    5904.0       0.0 mem_i_pc_o[9]             11228.7314
+    0:22:33 1299225.1      1.86    5895.2       0.0 u_frontend/u_fetch/pc_f_q_reg[30]/D 11231.1162
+    0:22:35 1299108.6      1.86    5894.0       0.0 u_frontend/u_bpu/genblk1.ras_stack_q_reg[2][29]/D 11228.5654
+    0:22:39 1299258.3      1.85    5889.7       0.0                           11230.8760
+    0:23:10 1300163.1      1.87    5889.2       1.1                           11238.9180
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:23:10 1300163.1      1.87    5889.2       1.1                           11238.9180
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+    0:23:32 1252651.9      1.87    5812.2       0.0 u0_exec/result_q_reg[15]/D 10430.3008
+    0:23:33 1253031.2      1.86    5793.2       0.0 u_frontend/u_fetch/pc_f_q_reg[5]/D 10436.4004
+    0:23:36 1253909.3      1.85    5759.0       0.0                           10451.1660
+    0:24:10 1254448.2      1.89    5635.1       1.2                           10452.8291
+    0:24:10 1254448.2      1.89    5635.1       1.2                           10452.8291
+    0:24:16 1252635.3      1.89    5571.6       1.2                           10457.2373
+    0:24:16 1252635.3      1.89    5571.6       1.2                           10457.2373
+    0:24:45 1255359.6      1.90    5560.9       1.3                           10490.9229
+    0:24:45 1255359.6      1.90    5560.9       1.3                           10490.9229
+    0:24:56 1255738.8      1.89    5566.8       1.5                           10495.4814
+    0:24:56 1255738.8      1.89    5566.8       1.5                           10495.4814
+    0:25:34 1256334.3      1.89    5563.2       2.4                           10504.6162
+    0:25:34 1256334.3      1.89    5563.2       2.4                           10504.6162
+    0:26:09 1262511.4      1.88    5515.2      19.0                           10604.1738
+    0:26:09 1262511.4      1.88    5515.2      19.0                           10604.1738
+    0:26:51 1262478.1      1.88    5512.8      19.0                           10602.8779
+    0:26:51 1262478.1      1.88    5512.8      19.0                           10602.8779
+    0:27:16 1265046.1      1.87    5512.4      21.7                           10645.6221
+    0:27:16 1265046.1      1.87    5512.4      21.7                           10645.6221
+    0:28:04 1265734.7      1.87    5508.6      24.8                           10655.4482
+    0:28:04 1265734.7      1.87    5508.6      24.8                           10655.4482
+    0:28:34 1269965.9      1.85    5437.4      33.5                           10719.9414
+    0:28:34 1269965.9      1.85    5437.4      33.5                           10719.9414
+    0:29:03 1271326.4      1.86    5472.8      33.6                           10741.6260
+    0:29:04 1271489.4      1.86    5472.9      33.6                           10743.0186
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:29:05 1271489.4      1.86    5472.9      33.6                           10743.0186
+    0:29:14 1245769.8      1.86    5834.4      33.6                           10225.0176
+    0:29:17 1246315.3      1.85    5824.4      39.7                           10232.3672
+    0:29:19 1246142.3      1.85    5823.3      39.7                           10231.2168
+    0:29:20 1245480.4      1.85    5825.9      39.7                           10224.0234
+    0:29:22 1245067.9      1.85    5822.9      41.6                           10219.1689
+    0:29:24 1244605.5      1.85    5822.5      40.6                           10213.7627
+    0:29:27 1244299.5      1.85    5821.9      40.6                           10209.2959
+    0:29:31 1244043.3      1.85    5821.8      42.5                           10207.3662
+    0:29:32 1243840.4      1.85    5818.0      42.5                           10204.4795
+    0:29:32 1243840.4      1.85    5818.0      42.5                           10204.4795
+    0:29:37 1244775.1      1.85    5756.2      42.6                           10242.6807
+    0:29:40 1243980.1      1.85    5741.8      42.6                           10233.8838
+    0:29:43 1242782.6      1.85    5743.9      42.5                           10224.4238
+    0:29:45 1241831.2      1.85    5756.1      42.5                           10208.9893
+    0:29:48 1244322.7      1.85    5744.0      39.3 u_issue/u_regfile/net242388 10240.9512
+    0:29:50 1245111.0      1.84    5750.2       3.3 u_frontend/u_fetch/pc_f_q_reg[8]/D 10254.5840
+    0:29:54 1245693.1      1.84    5731.2       5.9 u_issue/pc_x_q_reg[16]/D  10263.5449
+    0:29:56 1245669.9      1.84    5720.5       6.9 u_frontend/u_fetch/pc_f_q_reg[8]/D 10262.5098
+    0:29:57 1245773.0      1.84    5719.9       9.9 u_frontend/u_fetch/pc_f_q_reg[29]/D 10263.9121
+    0:30:00 1245689.8      1.82    5685.6      10.9 u_frontend/u_fetch/pc_f_q_reg[29]/D 10261.7256
+    0:30:03 1245829.5      1.82    5674.8      11.0 mem_i_pc_o[5]             10264.3975
+    0:30:09 1246222.0      1.82    5684.2       9.0 u_frontend/u_fetch/pc_f_q_reg[20]/D 10268.5469
+    0:30:12 1246554.7      1.82    5674.7       9.0 u_frontend/u_fetch/pc_f_q_reg[11]/D 10273.2227
+    0:30:14 1247336.4      1.82    5665.6       9.0 u_issue/pc_x_q_reg[16]/D  10285.7852
+    0:30:17 1247642.4      1.82    5650.4       9.0 u_frontend/u_fetch/pc_f_q_reg[13]/D 10290.7734
+    0:30:18 1247609.1      1.82    5642.8       9.0 u_frontend/u_fetch/pc_f_q_reg[8]/D 10291.1582
+    0:30:21 1248001.7      1.81    5636.7       9.0 u_lsu/mem_cacheable_q_reg/D 10297.0107
+    0:30:24 1248829.9      1.81    5613.6       6.0 u_frontend/u_fetch/pc_f_q_reg[13]/D 10310.4648
+    0:30:25 1249315.6      1.81    5611.4       6.0 u_frontend/u_fetch/pc_f_q_reg[13]/D 10318.1309
+    0:30:27 1249615.0      1.81    5603.1       6.0 u_frontend/u_fetch/pc_f_q_reg[14]/D 10323.1504
+    0:30:29 1249797.9      1.81    5668.3       6.0 u_frontend/u_fetch/pc_f_q_reg[14]/D 10326.1260
+    0:30:31 1250050.7      1.81    5666.8       6.0 u_frontend/u_fetch/pc_f_q_reg[14]/D 10329.5801
+    0:30:32 1250483.2      1.80    5664.9       5.0 u_frontend/u_fetch/pc_f_q_reg[14]/D 10335.8643
+    0:30:34 1250792.5      1.80    5663.6       5.0 u_frontend/u_fetch/pc_f_q_reg[14]/D 10341.2041
+    0:30:39 1251258.2      1.80    5654.3       2.0 u_issue/net259274         10349.3945
+    0:30:41 1251261.5      1.80    5654.2       0.0                           10349.3672
+    0:31:43 1256490.6      1.79    5554.2       3.3                           10432.6807
+    0:31:46 1256364.2      1.79    5540.2       3.3                           10432.3604
+    0:31:50 1256666.9      1.79    5500.1       3.3                           10437.1211
+    0:31:53 1256816.6      1.79    5497.0       3.3                           10439.3896
+    0:31:56 1257012.9      1.79    5495.1       3.3                           10442.7920
+    0:32:12 1257857.8      1.80    5506.0       3.5                           10457.1895
+    0:32:37 1221061.3      1.80    5469.8       6.0                           9826.6475
+Loading db file '/home/host/Project/finish/RV32IM/syn/lib/smic18_ff.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'core' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'u_issue/u1_pipe_ctrl/clk_i': 6959 load(s), 1 driver(s)
+     Net 'u_issue/u1_pipe_ctrl/rstn_i': 6029 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#
+change_names -rules verilog -hierarchy
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+1
+#
+write -hierarchy -format verilog -output ../netlist/core.v
+Writing verilog file '/home/host/Project/finish/RV32IM/syn/netlist/core.v'.
+1
+#
+set_svf -off
+1
+#reports
+report_qor > ../reports/${DESIGN_NAME}.mapped.qor.rpt
+report_timing -transition_time -nets -attribute -nworst 1 -max_paths 3000 > ../reports/${DESIGN_NAME}.mapped.timing.3000maxPaths.rpt
+report_constraint -all > ../reports/${DESIGN_NAME}.mapped.timing.all_constraint.rpt
+report_area -nosplit > ../reports/${DESIGN_NAME}.mapped.area.rpt
+report_power -nosplit > ../reports/${DESIGN_NAME}.mapped.power.rpt
+report_clock_gating -nosplit > ../reports/${DESIGN_NAME}.mapped.clock_gating.rptdc_shell> exit
+
+Memory usage for main task 574 Mbytes.
+Memory usage for this session 574 Mbytes.
+CPU usage for this session 1982 seconds ( 0.55 hours ).
+
+Thank you...

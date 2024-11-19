@@ -1,0 +1,74 @@
+{
+    "axi2mem": [
+        "axi2mem",
+        "s9BI9",
+        "module",
+        10
+    ],
+    "multiplier_0000": [
+        "multiplier_0000",
+        "HmBM1",
+        "module",
+        6
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "frontend": [
+        "frontend",
+        "B2DB5",
+        "module",
+        2
+    ],
+    "divider": [
+        "divider",
+        "ANMrv",
+        "module",
+        7
+    ],
+    "pipe_ctrl": [
+        "pipe_ctrl",
+        "gAERR",
+        "module",
+        3
+    ],
+    "exec": [
+        "exec",
+        "z5D28",
+        "module",
+        4
+    ],
+    "lsu": [
+        "lsu",
+        "xfmAy",
+        "module",
+        5
+    ],
+    "csr": [
+        "csr",
+        "cNThd",
+        "module",
+        8
+    ],
+    "tcm_mem": [
+        "tcm_mem",
+        "DBb1S",
+        "module",
+        9
+    ],
+    "top_tb": [
+        "top_tb",
+        "W0eJz",
+        "module",
+        11
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        12
+    ]
+}

@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : core
+Version: O-2018.06-SP1
+Date   : Tue Nov 19 16:42:10 2024
+****************************************
+
+Library(s) Used:
+
+    smic18_ff (File: /home/host/Project/finish/RV32IM/syn/lib/smic18_ff.db)
+
+Number of ports:                         7116
+Number of nets:                         55618
+Number of cells:                        46879
+Number of combinational cells:          39849
+Number of sequential cells:              7008
+Number of macros/black boxes:               0
+Number of buf/inv:                       7623
+Number of references:                      16
+
+Combinational area:             753466.198524
+Buf/Inv area:                    95908.313953
+Noncombinational area:          467595.113388
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:               1221061.311913
+Total area:                 undefined
+1
