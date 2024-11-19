@@ -1,0 +1,78 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : core
+Version: O-2018.06-SP1
+Date   : Tue Nov 19 16:42:13 2024
+****************************************
+
+
+Library(s) Used:
+
+    smic18_ff (File: /home/host/Project/finish/RV32IM/syn/lib/smic18_ff.db)
+
+
+Operating Conditions: best   Library: smic18_ff
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+core                   reference_area_2500000 smic18_ff
+frontend_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_SUPPORT_MMU0_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0 reference_area_1000000 smic18_ff
+issue_SUPPORT_MULDIV1_SUPPORT_DUAL_ISSUE1_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1 reference_area_1000000 smic18_ff
+exec_1                 reference_area_100000 smic18_ff
+exec_0                 reference_area_100000 smic18_ff
+multiplier_MULT_STAGES2 reference_area_100000 smic18_ff
+divider                reference_area_100000 smic18_ff
+lsu_80000000_8fffffff  reference_area_100000 smic18_ff
+csr_SUPPORT_MULDIV1_SUPPORT_SUPER0 reference_area_100000 smic18_ff
+bpu_SUPPORT_BRANCH_PREDICTION1_GSHARE_ENABLE1_PHT_ENABLE1_RAS_ENABLE1_NUM_PHT_ENTRIES512_NUM_PHT_ENTRIES_W9_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5 reference_area_1000000 smic18_ff
+decode_SUPPORT_MULDIV1_EXTRA_DECODE_STAGE0 reference_area_100000 smic18_ff
+fetch_SUPPORT_MMU0     reference_area_100000 smic18_ff
+pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_1 reference_area_100000 smic18_ff
+regfile                reference_area_1000000 smic18_ff
+alu_1                  reference_area_100000 smic18_ff
+lsu_fifo_WIDTH36_DEPTH2_ADDR_W1 reference_area_20000 smic18_ff
+csr_regfile_SUPPORT_SUPER0_SUPPORT_MTIMECMP1 reference_area_100000 smic18_ff
+bpu_lfsr_DEPTH32_ADDR_W5 reference_area_20000 smic18_ff
+fetch_fifo_OPC_INFO_W2 reference_area_100000 smic18_ff
+decoder_1              reference_area_20000 smic18_ff
+pipe_ctrl_SUPPORT_LOAD_BYPASS1_SUPPORT_MUL_BYPASS1_0 reference_area_100000 smic18_ff
+alu_0                  reference_area_100000 smic18_ff
+decoder_0              reference_area_20000 smic18_ff
+
+
+Global Operating Voltage = 1.98 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 176.2716 mW   (95%)
+  Net Switching Power  =   8.4378 mW    (5%)
+                         ---------
+Total Dynamic Power    = 184.7094 mW  (100%)
+
+Cell Leakage Power     =   9.8266 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register         170.6172            0.3980        3.0217e+03          171.0182  (  92.58%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      5.6512            8.0399        6.8050e+03           13.6980  (   7.42%)
+--------------------------------------------------------------------------------------------------
+Total            176.2684 mW         8.4378 mW     9.8266e+03 nW       184.7162 mW
+1

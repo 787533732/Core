@@ -1,0 +1,127 @@
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+Information: Updating design information... (UID-85)
+Warning: Design 'core' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : qor
+Design : core
+Version: O-2018.06-SP1
+Date   : Tue Nov 19 16:41:57 2024
+****************************************
+
+
+  Timing Path Group 'FEEDTHROUGH'
+  -----------------------------------
+  Levels of Logic:              17.00
+  Critical Path Length:          1.28
+  Critical Path Slack:          -1.68
+  Critical Path Clk Period:      4.00
+  Total Negative Slack:        -50.18
+  No. of Violating Paths:       35.00
+  Worst Hold Violation:         -0.13
+  Total Hold Violation:         -0.70
+  No. of Hold Violations:        6.00
+  -----------------------------------
+
+  Timing Path Group 'REGIN'
+  -----------------------------------
+  Levels of Logic:              44.00
+  Critical Path Length:          3.27
+  Critical Path Slack:          -1.80
+  Critical Path Clk Period:      4.00
+  Total Negative Slack:      -4662.85
+  No. of Violating Paths:     5776.00
+  Worst Hold Violation:         -0.07
+  Total Hold Violation:         -1.87
+  No. of Hold Violations:       37.00
+  -----------------------------------
+
+  Timing Path Group 'REGOUT'
+  -----------------------------------
+  Levels of Logic:              20.00
+  Critical Path Length:          1.63
+  Critical Path Slack:          -0.03
+  Critical Path Clk Period:      4.00
+  Total Negative Slack:         -0.03
+  No. of Violating Paths:        1.00
+  Worst Hold Violation:         -0.04
+  Total Hold Violation:         -0.77
+  No. of Hold Violations:       28.00
+  -----------------------------------
+
+  Timing Path Group 'clk_i'
+  -----------------------------------
+  Levels of Logic:              48.00
+  Critical Path Length:          3.70
+  Critical Path Slack:          -0.17
+  Critical Path Clk Period:      4.00
+  Total Negative Slack:       -237.17
+  No. of Violating Paths:     2579.00
+  Worst Hold Violation:         -0.06
+  Total Hold Violation:         -2.06
+  No. of Hold Violations:      203.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         22
+  Hierarchical Port Count:       6817
+  Leaf Cell Count:              46808
+  Buf/Inv Cell Count:            7623
+  Buf Cell Count:                 809
+  Inv Cell Count:                6814
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     39849
+  Sequential Cell Count:         6959
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:   753466.198524
+  Noncombinational Area:
+                        467595.113388
+  Buf/Inv Area:          95908.313953
+  Total Buffer Area:         17889.56
+  Total Inverter Area:       78018.75
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:           1221061.311913
+  Design Area:         1221061.311913
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         49861
+  Nets With Violations:            76
+  Max Trans Violations:            75
+  Max Cap Violations:               0
+  Max Fanout Violations:            2
+  -----------------------------------
+
+
+  Hostname: IC_EDA
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    9.83
+  Logic Optimization:                680.38
+  Mapping Optimization:              992.19
+  -----------------------------------------
+  Overall Compile Time:             1955.80
+  Overall Compile Wall Clock Time:  1962.30
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 1.80  TNS: 4716.12  Number of Violating Paths: 5845
+
+
+  Design (Hold)  WNS: 0.13  TNS: 5.39  Number of Violating Paths: 274
+
+  --------------------------------------------------------------------
+
+
+1

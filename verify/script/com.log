@@ -1,0 +1,106 @@
+Command: vcs +v2k -debug_access+all -full64 -timescale=1ns/1ns -fsdb -sverilog /home/host/Project/finish/RV32IM/verify/core/decoder.v \
+/home/host/Project/finish/RV32IM/verify/core/decode.v /home/host/Project/finish/RV32IM/verify/core/frontend.v \
+/home/host/Project/finish/RV32IM/verify/core/fetch.v /home/host/Project/finish/RV32IM/verify/core/define.v \
+/home/host/Project/finish/RV32IM/verify/core/issue.v /home/host/Project/finish/RV32IM/verify/core/pipe_ctrl.v \
+/home/host/Project/finish/RV32IM/verify/core/regfile.v /home/host/Project/finish/RV32IM/verify/core/core.v \
+/home/host/Project/finish/RV32IM/verify/core/exec.v /home/host/Project/finish/RV32IM/verify/core/alu.v \
+/home/host/Project/finish/RV32IM/verify/core/lsu.v /home/host/Project/finish/RV32IM/verify/core/multiplier.v \
+/home/host/Project/finish/RV32IM/verify/core/divider.v /home/host/Project/finish/RV32IM/verify/core/bpu.v \
+/home/host/Project/finish/RV32IM/verify/core/csr.v /home/host/Project/finish/RV32IM/verify/core/csr_regfile.v \
+/home/host/Project/finish/RV32IM/verify/core/tcm_mem_ram.v /home/host/Project/finish/RV32IM/verify/core/tcm_mem.v \
+/home/host/Project/finish/RV32IM/verify/perip/icache/icache_data_ram.v /home/host/Project/finish/RV32IM/verify/perip/icache/icache_tag_ram.v \
+/home/host/Project/finish/RV32IM/verify/perip/icache/icache.v /home/host/Project/finish/RV32IM/verify/perip/mem/sram.v \
+/home/host/Project/finish/RV32IM/verify/perip/mem/axi_if.v /home/host/Project/finish/RV32IM/verify/perip/mem/axi2mem.v \
+/home/host/Project/finish/RV32IM/verify/top_tb.v /home/host/Project/finish/RV32IM/verify/top/top.v \
++incdir+/include -l com.log
+                         Chronologic VCS (TM)
+        Version O-2018.09-1_Full64 -- Tue Nov 19 15:02:19 2024
+               Copyright (c) 1991-2018 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/decoder.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/decoder.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/decode.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/frontend.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/fetch.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/fetch.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/define.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/issue.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/issue.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/pipe_ctrl.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/pipe_ctrl.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/regfile.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/core.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/exec.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/exec.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/alu.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/alu.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/lsu.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/lsu.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/multiplier.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/multiplier.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/divider.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/divider.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/bpu.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/csr.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/csr.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/csr_regfile.v'
+Parsing included file '../core/define.v'.
+Back to file '/home/host/Project/finish/RV32IM/verify/core/csr_regfile.v'.
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/tcm_mem_ram.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/core/tcm_mem.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/perip/icache/icache_data_ram.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/perip/icache/icache_tag_ram.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/perip/icache/icache.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/perip/mem/sram.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/perip/mem/axi_if.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/perip/mem/axi2mem.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/top_tb.v'
+Parsing design file '/home/host/Project/finish/RV32IM/verify/top/top.v'
+Top Level Modules:
+       top_tb
+TimeScale is 1 ns / 1 ns
+Starting vcs inline pass...
+10 modules and 0 UDP read.
+recompiling module frontend
+recompiling module pipe_ctrl
+recompiling module exec
+recompiling module lsu
+recompiling module multiplier
+recompiling module divider
+recompiling module csr
+recompiling module tcm_mem
+recompiling module axi2mem
+recompiling module top_tb
+All of 10 modules done
+make[1]: Entering directory '/home/host/Project/finish/RV32IM/verify/script/csrc' \
+
+rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv    -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
+-Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -rdynamic  -Wl,-rpath=/home/synopsys/vcs-mx/O-2018.09-1/linux64/lib \
+-L/home/synopsys/vcs-mx/O-2018.09-1/linux64/lib   objs/amcQw_d.o   _96362_archive_1.so \
+SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
+-lzerosoft_rt_stubs -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile \
+-luclinative /home/synopsys/vcs-mx/O-2018.09-1/linux64/lib/vcs_tls.o   -Wl,-whole-archive \
+-lvcsucli -Wl,-no-whole-archive        _vcs_pli_stub_.o   /home/synopsys/vcs-mx/O-2018.09-1/linux64/lib/vcs_save_restore_new.o \
+/home/synopsys/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm \
+-lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory '/home/host/Project/finish/RV32IM/verify/script/csrc' \
+
+CPU time: 1.348 seconds to compile + .319 seconds to elab + .345 seconds to link

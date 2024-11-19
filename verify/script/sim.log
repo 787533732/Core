@@ -1,0 +1,65 @@
+Command: /home/host/Project/finish/RV32IM/verify/script/./simv -l sim.log
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-1_Full64; Runtime version O-2018.09-1_Full64;  Nov 19 15:02 2024
+*Verdi* Loading libsscore_vcs201809.so
+FSDB Dumper for VCS, Release Verdi_O-2018.09-SP2, Linux x86_64/64bit, 02/21/2019
+(C) 1996 - 2019 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'top.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the MDAs, layer (0).
+*Verdi* : Enable +mda and +packedmda dumping.
+*Verdi* : End of traversing the MDAs.
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-add.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-sub.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-xor.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                             ../riscv-tests/isa/generated/rv32ui-p-or.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-and.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-sll.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-srl.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-sra.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-slt.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-sltu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-addi.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-xori.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-ori.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-andi.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-slli.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-srli.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-srai.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-slti.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                          ../riscv-tests/isa/generated/rv32ui-p-sltiu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-beq.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-bne.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-blt.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-bge.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-bltu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-bgeu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-jal.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32ui-p-jalr.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-lui.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                          ../riscv-tests/isa/generated/rv32ui-p-auipc.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                             ../riscv-tests/isa/generated/rv32ui-p-sb.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                             ../riscv-tests/isa/generated/rv32ui-p-sh.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                             ../riscv-tests/isa/generated/rv32ui-p-sw.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                             ../riscv-tests/isa/generated/rv32ui-p-lb.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                             ../riscv-tests/isa/generated/rv32ui-p-lh.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                             ../riscv-tests/isa/generated/rv32ui-p-lw.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-lbu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32ui-p-lhu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32um-p-mul.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32um-p-mulh.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                         ../riscv-tests/isa/generated/rv32um-p-mulhsu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                          ../riscv-tests/isa/generated/rv32um-p-mulhu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32um-p-div.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32um-p-divu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                            ../riscv-tests/isa/generated/rv32um-p-rem.verilog PASS ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~                           ../riscv-tests/isa/generated/rv32um-p-remu.verilog PASS ~~~~~~~~~~~~~~~~~~~
+Time Out
+$finish called from file "/home/host/Project/finish/RV32IM/verify/top_tb.v", line 109.
+$finish at simulation time              1500000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1500000 ns
+CPU Time:      5.910 seconds;       Data structure size:   0.6Mb
+Tue Nov 19 15:02:26 2024
